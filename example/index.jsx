@@ -11,9 +11,13 @@ var TimeWrapper = React.createClass({
 		console.log("you left ");
 	},
 	onTimeChangeHandler: function (val) {
+		
 		if (val.length === 5) {
 			// do something with this value
 		}
+	},
+	onTimeClearHandler: function (val) {
+		console.log("Time clear");
 	},
 
 	render: function() {
@@ -27,6 +31,7 @@ var TimeWrapper = React.createClass({
 				onTimeChange={this.onTimeChangeHandler}
 				onFocusHandler={this.onFocusHandler}
 				onBlurHandler={this.onBlurHandler}
+				onTimeClear={this.onTimeClearHandler}
 			/>
 		);
 	}

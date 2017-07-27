@@ -91,15 +91,21 @@ class TimeInput extends Component {
             if (val.length > 5) {
                 return false;
             }
-
+            
             this.lastVal = val;
-
+            
             this.setState({
                 time: val
             });
 
             if (val.length === 5) {
                 this.props.onTimeChange(val);
+            }
+            
+            if (val.length === 0) {
+                if (this.props.onTimeClear) {
+                    this.props.onTimeClear(val);
+                }
             }
 
         }
